@@ -2,7 +2,7 @@
 
 ## Cài đặt ban đầu
 
-1. Cài đặt Git: [Download Git](https://git-scm.com/downloads)
+1. Cài đặt Git: [Download Git](https://github.com/HuyBui2112/kinh-do-ca-canh)
 2. Cấu hình Git:
 ```bash
 git config --global user.name "Tên của bạn"
