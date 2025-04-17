@@ -1,0 +1,119 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #0f172a;
+  --primary: #0ea5e9;
+  --primary-dark: #0284c7;
+  --secondary: #64748b;
+  --secondary-dark: #475569;
+  --accent: #f59e0b;
+  --accent-dark: #d97706;
+  --success: #10b981;
+  --error: #ef4444;
+  --border: #e2e8f0;
+  --card: #f8fafc;
+  --card-foreground: #1e293b;
+  --container-width: 1280px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0f172a;
+    --foreground: #f8fafc;
+    --primary: #0ea5e9;
+    --primary-dark: #38bdf8;
+    --secondary: #64748b;
+    --secondary-dark: #94a3b8;
+    --accent: #f59e0b;
+    --accent-dark: #fbbf24;
+    --success: #10b981;
+    --error: #ef4444;
+    --border: #1e293b;
+    --card: #1e293b;
+    --card-foreground: #f8fafc;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-be-vietnam-pro), sans-serif;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@layer base {
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 0.5em;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  h3 {
+    font-size: 1.75rem;
+  }
+
+  h4 {
+    font-size: 1.5rem;
+  }
+
+  h5 {
+    font-size: 1.25rem;
+  }
+
+  h6 {
+    font-size: 1rem;
+  }
+
+  a {
+    color: var(--primary);
+    text-decoration: none;
+    transition: color 0.2s ease-in-out;
+  }
+
+  a:hover {
+    color: var(--primary-dark);
+  }
+}
+
+.container {
+  width: 100%;
+  max-width: var(--container-width);
+  min-width: 320px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50;
+  }
+
+  .btn-primary {
+    @apply bg-[var(--primary)] text-white hover:bg-[var(--primary-dark)];
+  }
+
+  .btn-secondary {
+    @apply bg-[var(--secondary)] text-white hover:bg-[var(--secondary-dark)];
+  }
+
+  .btn-accent {
+    @apply bg-[var(--accent)] text-white hover:bg-[var(--accent-dark)];
+  }
+
+  .btn-outline {
+    @apply border border-[var(--border)] bg-transparent hover:bg-[var(--card)];
+  }
+}
